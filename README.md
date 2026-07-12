@@ -1,48 +1,32 @@
-# Python-mini-projects
-#Trivia game
+# Python Mini-Projects
 
-# list of questions
-# store the answers
-# randomly pick questions
-# ask the questions
-# see if they are correct
-# keep track of the score
-# tell the user their score
+A collection of small Python programs I've built while learning the language,
+organised by topic. Each one is short, self-contained, and runnable with just
+Python (standard library only) so I can keep practising the fundamentals.
 
-import random          
+## Projects
 
-questions = {
-"What is the keyword to define a function in python": "def" , 
-"Which data type is used to store True or False values": "boolean" ,
-"What is the correct file extension for Python files?": ".py" , 
-"Which symbol is used to comment in Python?": "#" ,
-"What function is used to get the imput from the user?": "input" ,
-"How do you start a for loop in Python?" : "for" ,
-"What is the output of 2 ** 3 in Python?": "8" ,
-"What keyword is used to import a module in Python?": "import" , 
-"What does the len() function return": "length" , 
-"What is the result of 10 // 3 in Python": "3"   
-}              
+| Folder | Program | What it practises |
+|--------|---------|-------------------|
+| `01_fundamentals` | `temperature_converter.py` | Functions, arithmetic, user input |
+| `02_data_structures` | `word_frequency.py` | Dictionaries, loops, string handling |
+| `03_algorithms` | `binary_search.py` | Searching a sorted list efficiently |
+| `04_files_and_data` | `csv_summary.py` | Reading a CSV and summarising data |
+| `05_oop` | `bank_account.py` | Classes, methods, input validation |
+| `06_games` | `trivia_game.py` | A quiz game with scoring and randomness |
 
-def python_trivia_game():                      
-    questions_list = list(questions.keys())    
-    total_questions = 5       
-    score = 0                      
- 
-    selected_questions = random.sample(questions_list, total_questions)           
-    
-    for idx, question in enumerate(selected_questions):            
-        user_answer = input("Your answer: ").lower().strip()   
+## Running any project
 
-      correct_answer = questions[question]      
-       
-    if user_answer == correct_answer.lower():                                        
-           print("Correct!\n")                      
-           score += 1                                
-        else:
-            print(f"Wrong, The correct ansqwer is: {correct_answer}.\n")
+```bash
+cd 01_fundamentals
+python temperature_converter.py
+```
 
-    print(f"Game over! Your final score is: {score}/{total_questions}")         
+Each file has a short comment at the top explaining what it does and how to run
+it. The `csv_summary` project reads the included `sales.csv`.
 
+## What I'm working on next
 
-python_trivia_game()
+- Adding a few small tests for the functions
+- A project that reads data from a public API
+- Reworking the CSV summary to write its results back out to a new file
